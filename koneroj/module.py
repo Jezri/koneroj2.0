@@ -14,29 +14,33 @@ class module(object):
     def write_concepts(self):
         temp = """ """
         if self.concepts != []:
-            temp +=r""" \subsection*{Concepts}
-                        \begin{enumerate}"""
+            temp +=r""" \section*{Concepts}"""
             for concept in self.concepts:
-                temp+= concept.parts["Definition"].write_item()
-            temp += """\end{enumerate}"""
+								temp+= r""" 
+\subsection*{""" 
+								temp += concept.name.desplay + r"""}
+\subsubsection*{""" 
+								temp+=concept.parts["Definition"].name.desplay + """}"""+concept.parts["Definition"].desplay
         return temp
     def write_techniques(self):
         temp = """ """
         if self.techniques != []:
-            temp +=r""" \subsection*{Techniques}
-                        \begin{enumerate}"""
+            temp +=r""" \subsection*{Techniques}"""
             for technique in self.techniques:
-                temp+= technique.parts["Procedure"].write_item()
-            temp += """\end{enumerate}"""
+								temp+= r""" 
+	\paragraph*{""" 
+								temp += technique.name.desplay + r"""}
+\subparagraph*{""" 
+								temp+=technique.parts["Procedure"].name.desplay + """}"""+technique.parts["Procedure"].desplay
+								
         return temp
-    
     def write_theorems(self):
         temp = """ """
         if self.theorems != []:
             temp +=r""" \subsection*{Theorems}
                         \begin{enumerate}"""
             for theorem in self.theorem:
-                temp+= thoerem.parts["Result"].write_item()
+                temp+= thoerem.parts["Result"].write_item(self.name.desplay)
             temp += """\end{enumerate}"""
         return temp
       

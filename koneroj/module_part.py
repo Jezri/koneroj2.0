@@ -7,8 +7,8 @@ class module_part(object):
 		self.techniques = []
                 self.theorems =[]
       
-	def write_item(self):
-		return (r'\begin{item}'+ self.desplay + '\end{item}')
+	def write_item(self, label):
+		return (r'\begin{item}['+label+']'+ self.desplay + '\end{item}')
   
 	def write_section(self):
 		temp = ''   
@@ -22,7 +22,6 @@ class module_part(object):
 		self.thoerms += [dependency]
   
 	def add_concept(self,concept):
-		self.desplay += r'\footnotemark'
 		self.concepts += [concept]
 
 	def add_technique(self,technique):
