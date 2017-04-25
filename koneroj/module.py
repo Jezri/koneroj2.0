@@ -25,12 +25,12 @@ class module(object):
     def write_techniques(self):
         temp = """ """
         if self.techniques != []:
-            temp +=r""" \subsection*{Techniques}"""
+            temp +=r""" \section*{Techniques}"""
             for technique in self.techniques:
 								temp+= r""" 
-	\paragraph*{""" 
+	\subsection*{""" 
 								temp += technique.name.desplay + r"""}
-\subparagraph*{""" 
+\subsubsection*{""" 
 								temp+=technique.parts["Procedure"].name.desplay + """}"""+technique.parts["Procedure"].desplay
 								
         return temp
@@ -47,5 +47,5 @@ class module(object):
     def write_module(self):
         temp = ''
         for part in self.parts:
-            temp += r'\subsection*{'+ self.parts[part].name.desplay + r'}' + self.parts[part].desplay
+            temp += r'\section*{'+ self.parts[part].name.desplay + r'}' + self.parts[part].desplay
         return temp

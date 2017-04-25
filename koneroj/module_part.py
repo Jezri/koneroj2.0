@@ -17,14 +17,14 @@ class module_part(object):
 			temp +=  '\n' +self.desplay
 			return temp
        
-	def add_thoerem(self,thoerm):
-		self.desplay += r'\footnotemark'
-		self.thoerms += [dependency]
+	def add_thoerem(self,theorem,text):
+		self.desplay += r"""\overbrace{ """+ text+r"""}^\text{"""+ theorem.name.desplay +r"""}"""
+		self.theorems += [dependency]
   
 	def add_concept(self,concept):
 		self.concepts += [concept]
 
-	def add_technique(self,technique):
-		self.desplay += r'\footnotemark'
+	def add_technique(self,technique,text):
+		self.desplay += r"""\overbrace{ """+ text+r"""}^\text{"""+ technique.name.desplay +r"""}"""
 		self.techniques += [technique]
           
