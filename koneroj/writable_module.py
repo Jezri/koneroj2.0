@@ -22,9 +22,9 @@ class writable_module(module):
         f.write(self.write_module())
         for minor_module in self.minor_modules:
             f.write(minor_module.write_module())
-        f.write(self.write_concepts())
         f.write(self.write_techniques())
         f.write(self.write_theorems())
+        f.write(self.write_concepts())
         f.write(r'\end{document}')
         f.close
 		
