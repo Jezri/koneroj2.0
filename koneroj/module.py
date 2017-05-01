@@ -1,4 +1,5 @@
 from module_name import *
+from extras import *
 class module(object):
     def __init__(self,name):
         self.name = module_name(name) 
