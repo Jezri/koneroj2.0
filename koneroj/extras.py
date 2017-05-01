@@ -1,0 +1,2 @@
+class extras(object):
+	pass
