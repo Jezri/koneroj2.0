@@ -1,2 +1,6 @@
 class extras(object):
-	pass
+	def __init__(self):
+		extras.question = ()
+		extras.examples = ()
+		extras.explanations = ()
+	
