@@ -57,6 +57,6 @@ class module(object):
     def write_extras(self):
         temp = ''
         for extra in self.extras:
-            temp += r'\section*{'+self.extras[extra].name.desplay + r'}' + self.extras[extra].desplay
-
+            if self.extras[extra].desplay !="":
+                temp += r'\section*{'+self.extras[extra].name.desplay + r'}' + self.extras[extra].desplay
         return temp
