@@ -1,12 +1,12 @@
 from module_name import *
-from extras import *
 class module(object):
     def __init__(self,name):
-        self.name = module_name(name) 
+    self.name = module_name(name) 
         self.parts = {}
-        self.concepts = []
-        self.theorems = []
-        self.techniques = []
+		self.extras ={}
+		self.concepts = []
+		self.theorems = []
+		self.techniques = []
     def assemble(self):	
         for part in self.parts:
             self.concepts += self.parts[part].concepts
@@ -50,3 +50,9 @@ class module(object):
         for part in self.parts:
             temp += r'\section*{'+ self.parts[part].name.desplay + r'}' + self.parts[part].desplay
         return temp
+
+	def write_extras(self):
+		temp = ''
+		for extra in self.extras:
+			temp += r'\section*{'+self.extras[extra].name.desplay + r'}' + self.parts[part].desplay
+		return temp
