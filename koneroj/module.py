@@ -6,7 +6,7 @@ class module(object):
     def __init__(self,name):
         self.name = module_name(name) 
         self.parts = {}
-        self.extras ={}
+        self.extras ={"Example" : example() , "Explanation" : explanation(), "Question": question()}
         self.concepts = []
         self.theorems = []
         self.techniques = []
