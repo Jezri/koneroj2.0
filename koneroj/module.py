@@ -10,6 +10,10 @@ class module(object):
         self.concepts = []
         self.theorems = []
         self.techniques = []
+    def __enter__(self):
+        return self
+    def __exit__(self, type, value ,traceback):
+	pass
     def assemble(self): 
         for part in self.parts:
             self.concepts += self.parts[part].concepts
