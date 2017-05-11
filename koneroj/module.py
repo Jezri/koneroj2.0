@@ -6,7 +6,7 @@ class module(object):
     def __init__(self,name):
         self.name = module_name(name) 
         self.parts = {}
-        self.extras ={"Example" : example() , "Explanation" : explanation(), "Question": question()}
+        self.extras ={"Examples" : {} , "Explanations" : {}, "Questions": {}}
         self.concepts = []
         self.theorems = []
         self.techniques = []
@@ -60,7 +60,8 @@ class module(object):
 
     def write_extras(self):
         temp = ''
-        for extra in self.extras:
-            if self.extras[extra].desplay !="":
-                temp += r'\section*{'+self.extras[extra].name.desplay + r'}' + self.extras[extra].desplay
+        for catagory in self.extras:
+            if self.extras[catagory] !={}:
+                for extra in self.extras[catagory]:
+		    temp += r'\section*{'+self.extras[catagory][extra].name.desplay + r'}' + self.extras[catagory][extra].desplay
         return temp
