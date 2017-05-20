@@ -62,6 +62,7 @@ class module(object):
         temp = ''
         for catagory in self.extras:
             if self.extras[catagory] !={}:
+                temp+= r'\section*{'+catagory+ r'}'
                 for extra in self.extras[catagory]:
-		    temp += r'\section*{'+self.extras[catagory][extra].name.desplay + r'}' + self.extras[catagory][extra].desplay
+		    temp += r'\subsection*{'+self.extras[catagory][extra].name.desplay + r'}' + self.extras[catagory][extra].desplay
         return temp
