@@ -1,3 +1,5 @@
+
+
 from module_name import * 
 class module_part(object):
 	def __init__(self,name):

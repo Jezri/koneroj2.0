@@ -20,6 +20,7 @@ class writable_module(module):
         f = open( self.name.code + r'.tex',"w")
         f.write(self.preamble)
         f.write(self.write_module())
+        f.write(self.write_extras())
         for minor_module in self.minor_modules:
             f.write(minor_module.write_module())
         f.write(self.write_techniques())
