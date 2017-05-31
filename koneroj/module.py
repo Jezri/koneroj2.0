@@ -47,8 +47,8 @@ class module(object):
         if self.theorems != []:
             temp +=r""" \subsection*{Theorems}
                         \begin{enumerate}"""
-            for theorem in self.theorem:
-                temp+= thoerem.parts["Result"].write_item(self.name.desplay)
+            for theorem in self.theorems:
+                temp+= theorem.parts["Result"].write_item(theorem.name.desplay)
             temp += """\end{enumerate}"""
         return temp
       
