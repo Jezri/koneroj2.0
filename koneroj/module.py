@@ -7,9 +7,9 @@ class module(object):
         self.name = module_name(name) 
         self.parts = {}
         self.extras ={"Examples" : {} , "Explanations" : {}, "Questions": {}}
-        self.concepts = []
-        self.theorems = []
-        self.techniques = []
+        self.concepts = {}
+        self.theorems = {}
+        self.techniques = {}
     def __enter__(self):
         return self
     def __exit__(self, type, value ,traceback):
@@ -35,11 +35,11 @@ class module(object):
         if self.techniques != []:
             temp +=r""" \section*{Techniques}"""
             for technique in self.techniques:
-                                temp+= r""" 
+                temp+= r""" 
     \subsection*{""" 
-                                temp += technique.name.desplay + r"""}
+                temp += technique.name.desplay + r"""}
 \subsubsection*{""" 
-                                temp+=technique.parts["Procedure"].name.desplay + """}"""+technique.parts["Procedure"].desplay
+                temp+=technique.parts["Procedure"].name.desplay + """}"""+technique.parts["Procedure"].desplay
                                 
         return temp
     def write_theorems(self):
@@ -47,9 +47,9 @@ class module(object):
         if self.theorems != []:
             temp +=r""" \subsection*{Theorems}
                         \begin{enumerate}"""
-            for theorem in self.theorem:
-                temp+= thoerem.parts["Result"].write_item(self.name.desplay)
-            temp += """\end{enumerate}"""
+            for theorem in self.theorems:
+                temp+= self.theorems[theorem].parts["Result"].write_item(self.name.desplay)
+                temp += """\end{enumerate}"""
         return temp
       
     def write_module(self):
